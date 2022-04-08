@@ -1,0 +1,10 @@
+@use '../../base';
+@use '../../media';
+
+.background-header img {
+  @include base.full-image;
+
+  @include media.mobile {
+      height: 100px;
+    }
+}

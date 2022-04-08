@@ -1,0 +1,28 @@
+//font
+$primary-font: Spartan, sans-serif;
+
+//colors
+$primary-green: hsl(180, 29%, 50%);
+$primary-grey-verylight: hsl(180, 52%, 96%);
+$primary-grey-light: hsl(180, 31%, 95%);
+$primary-grey-dark: hsl(180, 8%, 52%);
+$primary-grey-verydark: hsl(180, 14%, 20%);
+$light-grey: rgb(199, 196, 196);
+$white: #fff;
+
+//border-radius
+$border-radius-standard: 4px;
+$border-radius-big: 1rem;
+
+//others
+$max-width-standard: 1200px;
+$box-shadow:  5px 5px 5px $light-grey;
+$transition-standard: all .2s ease-in;
+
+
+//mixins
+@mixin full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

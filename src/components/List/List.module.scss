@@ -1,0 +1,23 @@
+@use '../../base';
+@use '../../media';
+
+.list {
+  max-width: base.$max-width-standard;
+  margin: 50px auto;
+
+  @include media.mobile {
+      max-width: 90vw;
+      margin: 100px auto 50px;
+    }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    color: base.$primary-grey-verydark;
+    text-align: center;
+  }
+}

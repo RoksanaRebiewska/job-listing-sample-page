@@ -1,0 +1,118 @@
+@use '../../base';
+@use '../../media';
+
+section li {
+  width: 100%;
+  background: base.$white;
+  box-shadow: base.$box-shadow;
+  border-radius: base.$border-radius-standard;
+  padding: 2rem;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr 4fr;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-left: .5rem solid transparent;
+
+  @include media.mobile {
+      grid-template-columns: 1fr;
+      margin: 1rem 0 75px;
+  }
+  
+  img {
+    @include media.mobile {
+      margin: -65px 0 25px;
+    }
+  }
+
+  span {
+    margin: 0 .5rem 0 0;
+    padding: .5rem;
+  }
+
+  .company {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+      color: base.$primary-green;
+      font-size: 1rem;
+      margin-right: .5rem;
+    }
+  }
+  
+  .new {
+    @extend %label;
+    background: base.$primary-green;
+  }
+  
+  .featured {
+    @extend %label;
+    background: base.$primary-grey-verydark;
+  }
+
+  .contract {
+    span {
+      color: base.$primary-grey-dark;
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    span:nth-of-type(2)::before, span:nth-of-type(3)::before {
+      content: '\25CF';
+      margin: 0 1rem;
+    }
+  }
+
+  .more {
+    justify-self: end;
+
+    @include media.mobile {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+        justify-self: start;
+      }
+
+    span {
+      background: base.$primary-grey-light;
+      border-radius: base.$border-radius-standard;
+      transition: base.$transition-standard;
+
+      &:hover {
+        cursor: pointer;
+        background: base.$primary-green;
+        color: base.$white;
+      }
+
+      @include media.mobile {
+        margin: .5rem .5rem .5rem 0;
+      }
+    }
+  }
+
+  h2:hover, h3:hover {
+    cursor: pointer;
+  }
+}
+
+.featured-li {
+  border-left: .5rem solid base.$primary-green;
+}
+
+%label {
+  text-transform: uppercase;
+  border-radius: base.$border-radius-big;
+  color: base.$white;
+  font-weight: 700;
+  font-size: .7rem;
+  height: fit-content;
+  margin: 0 .5rem;
+}
